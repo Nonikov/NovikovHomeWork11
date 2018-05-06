@@ -130,5 +130,10 @@ namespace MyCalculator
             label1.Text = null;
             _texted = true;
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
