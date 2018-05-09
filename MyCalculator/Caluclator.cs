@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace MyCalculator
 {
-    public partial class Form1 : Form
+    public partial class Calculator : Form
     {
         private bool _operationPressed;
         private bool _texted = true;
@@ -18,7 +18,7 @@ namespace MyCalculator
         private string _operation;
         private double _buf;
 
-        public Form1()
+        public Calculator()
         {
             InitializeComponent();
         }
@@ -36,11 +36,18 @@ namespace MyCalculator
 
             if (display.Text == "0" || _operationPressed)
             {
-                display.Clear();
+                if (s.Text == ".")
+                {
+                    display.Text = "0.";
+                }
+                else
+                {
+                    display.Clear();
+                }
                 _operationPressed = false;
             }
 
-            if (!(display.Text.Contains(".") && s.Text.Contains(".")))
+            if (!(display.Text.Contains(".") && s.Text == "."))
             {
                 display.Text += s.Text;
             }
@@ -88,7 +95,7 @@ namespace MyCalculator
                 case "*":
                     display.Text = (_buf * textBox).ToString();
                     break;
-                case "/":
+                case "÷":
                     if (textBox == 0)
                     {
                         display.Font = new Font("Microsoft Sans Serif", 26F);
