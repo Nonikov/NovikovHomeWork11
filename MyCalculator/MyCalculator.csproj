@@ -45,16 +45,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Caluclator.cs">
+    <Compile Include="Calculator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Caluclator.Designer.cs">
-      <DependentUpon>Caluclator.cs</DependentUpon>
+    <Compile Include="Calculator.Designer.cs">
+      <DependentUpon>Calculator.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Programmer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Programmer.Designer.cs">
+      <DependentUpon>Programmer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Caluclator.resx">
-      <DependentUpon>Caluclator.cs</DependentUpon>
+    <Compile Include="ScientificBoard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScientificBoard.Designer.cs">
+      <DependentUpon>ScientificBoard.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Calculator.resx">
+      <DependentUpon>Calculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programmer.resx">
+      <DependentUpon>Programmer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -65,6 +80,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ScientificBoard.resx">
+      <DependentUpon>ScientificBoard.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -77,6 +95,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{f765ea7d-4698-4249-823d-ce37b16ca797}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
