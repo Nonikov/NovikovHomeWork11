@@ -269,9 +269,9 @@ namespace MyCalculator
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            if (e.Node.Name == "Node0")
+            if (e.Node.Name == "NodeStandard")
             {
-                if(labelMode.Text == "Programmer") // Мок, пока нет логики в режиме "Programmer"
+                if (labelMode.Text == "Programmer") // Мок, пока нет логики в режиме "Programmer"
                 {
                     labelMode.Text = "Standard";
                     Height = 502;
@@ -327,57 +327,70 @@ namespace MyCalculator
                     buttonMul.Click += operator_Click;
                     buttonEquals.Click += equals_Click;
                 }
-                treeView1.Visible = false;
             }
 
-            if (e.Node.Name == "Node1")
+            if (e.Node.Name == "NodeScientific")
             {
-                labelMode.Text = "Scientific";
-                treeView1.Visible = false;
-                Height = 665;
-                panel1.Location = new Point(5, 292);
-                panel2.Visible = true;
-                buttonPercent.Visible = false;
-                button0.Width = 176;
-                button0.Location = new Point(0, 245);
-                programmer1.Visible = false;
+                if (labelMode.Text == "Programmer") // Мок, пока нет логики в режиме "Programmer"
+                {
+                    labelMode.Text = "Scientific";
+                    Height = 502;
+                    panel1.Location = new Point(6, 129);
+                    panel2.Visible = false;
+                    programmer1.Visible = false;
+                    buttonPercent.Visible = true;
+                    button0.Width = 85;
+                    button0.Location = new Point(91, 245);
+                    buttonC.PerformClick();
+                }
+                else if (labelMode.Text != "Scientific")
+                {
+                    labelMode.Text = "Scientific";
+                    Height = 665;
+                    panel1.Location = new Point(5, 292);
+                    panel2.Visible = true;
+                    buttonPercent.Visible = false;
+                    button0.Width = 176;
+                    button0.Location = new Point(0, 245);
+                    programmer1.Visible = false;
 
-                buttonC.PerformClick();
+                    buttonC.PerformClick();
 
-                button0.Click -= button_Click;
-                button1.Click -= button_Click;
-                button2.Click -= button_Click;
-                button3.Click -= button_Click;
-                button4.Click -= button_Click;
-                button5.Click -= button_Click;
-                button6.Click -= button_Click;
-                button7.Click -= button_Click;
-                button8.Click -= button_Click;
-                button9.Click -= button_Click;
-                buttonPlus.Click -= operator_Click;
-                buttonDiv.Click -= operator_Click;
-                buttonMinus.Click -= operator_Click;
-                buttonMul.Click -= operator_Click;
-                buttonEquals.Click -= equals_Click;
+                    button0.Click -= button_Click;
+                    button1.Click -= button_Click;
+                    button2.Click -= button_Click;
+                    button3.Click -= button_Click;
+                    button4.Click -= button_Click;
+                    button5.Click -= button_Click;
+                    button6.Click -= button_Click;
+                    button7.Click -= button_Click;
+                    button8.Click -= button_Click;
+                    button9.Click -= button_Click;
+                    buttonPlus.Click -= operator_Click;
+                    buttonDiv.Click -= operator_Click;
+                    buttonMinus.Click -= operator_Click;
+                    buttonMul.Click -= operator_Click;
+                    buttonEquals.Click -= equals_Click;
 
-                button0.Click += button_ClickScientific;
-                button1.Click += button_ClickScientific;
-                button2.Click += button_ClickScientific;
-                button3.Click += button_ClickScientific;
-                button4.Click += button_ClickScientific;
-                button5.Click += button_ClickScientific;
-                button6.Click += button_ClickScientific;
-                button7.Click += button_ClickScientific;
-                button8.Click += button_ClickScientific;
-                button9.Click += button_ClickScientific;
-                buttonPlus.Click += button_ClickScientific;
-                buttonDiv.Click += button_ClickScientific;
-                buttonMinus.Click += button_ClickScientific;
-                buttonMul.Click += button_ClickScientific;
-                buttonEquals.Click += equals_ClickScientific;
+                    button0.Click += button_ClickScientific;
+                    button1.Click += button_ClickScientific;
+                    button2.Click += button_ClickScientific;
+                    button3.Click += button_ClickScientific;
+                    button4.Click += button_ClickScientific;
+                    button5.Click += button_ClickScientific;
+                    button6.Click += button_ClickScientific;
+                    button7.Click += button_ClickScientific;
+                    button8.Click += button_ClickScientific;
+                    button9.Click += button_ClickScientific;
+                    buttonPlus.Click += button_ClickScientific;
+                    buttonDiv.Click += button_ClickScientific;
+                    buttonMinus.Click += button_ClickScientific;
+                    buttonMul.Click += button_ClickScientific;
+                    buttonEquals.Click += equals_ClickScientific;
+                }
             }
 
-            if (e.Node.Name == "Node2")
+            if (e.Node.Name == "NodeProgrammer")
             {
                 labelMode.Text = "Programmer";
                 treeView1.Visible = false;
@@ -389,12 +402,8 @@ namespace MyCalculator
                 button0.Width = 176;
                 button0.Location = new Point(0, 245);
             }
+            treeView1.Visible = false;
         }
         #endregion
-
-        private void Calculator_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -405,12 +405,12 @@
             this.treeView1.Location = new System.Drawing.Point(6, 26);
             this.treeView1.Name = "treeView1";
             treeNode1.ImageIndex = -2;
-            treeNode1.Name = "Node0";
+            treeNode1.Name = "NodeStandard";
             treeNode1.SelectedImageIndex = -2;
             treeNode1.Text = "Standard";
-            treeNode2.Name = "Node1";
+            treeNode2.Name = "NodeScientific";
             treeNode2.Text = "Scientific";
-            treeNode3.Name = "Node2";
+            treeNode3.Name = "NodeProgrammer";
             treeNode3.Text = "Programmer";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode1,
@@ -699,7 +699,6 @@
             this.Name = "Calculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
-            this.Load += new System.EventHandler(this.Calculator_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
